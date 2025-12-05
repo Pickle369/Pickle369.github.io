@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Muzyka jako Pasja — Moja Strona</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#f59e0b; --muted:#9aa4b2; --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0; color:#e6eef6; background:linear-gradient(180deg,var(--bg),#071022 120%); overflow: hidden;}
+    header{position:sticky; top:0; backdrop-filter: blur(6px); background: linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.25)); border-bottom:1px solid rgba(255,255,255,0.03); z-index:30}
+    .container{max-width:1100px;margin:0 auto;padding:28px 24px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#ef4444); box-shadow:0 6px 24px rgba(0,0,0,0.5);font-weight:800;color:#071022;font-family:'Playfair Display',serif}
+    nav{display:flex;gap:16px;margin-left:auto;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+    nav a:hover{color:#fff;background:var(--glass)}
+    .hero{display:grid;grid-template-columns:1fr 420px; gap:34px;padding:40px 0;align-items:center}
+    .hero h1{font-family:'Playfair Display',serif;font-size:40px;margin:0 0 8px}
+    .hero p{color:var(--muted);line-height:1.55}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+    .playlist{display:flex;flex-direction:column;gap:10px}
+    .artist-item{display:flex;gap:12px;align-items:center}
+    .artist-item img{width:64px;height:64px;border-radius:10px;object-fit:cover}
+    .artist-item .meta{font-weight:600}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    section{padding:40px 0}
+    h2{margin:0 0 14px;color:#fff}
+    .discography{display:flex;flex-direction:column;gap:12px}
+    .album{display:flex;gap:12px;align-items:center}
+    .album img{width:84px;height:84px;border-radius:8px;object-fit:cover}
+    .album .info{line-height:1}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+    .gallery img{width:100%;height:140px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+    footer{border-top:1px solid rgba(255,255,255,0.03);padding:26px 0;margin-top:40px;color:var(--muted)}
+    /* navigation mobile */
+    .hamburger{display:none;cursor:pointer}
+    @media(max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      nav{display:none}
+      .hamburger{display:block;margin-left:auto}
+      header .container{display:flex;align-items:center;gap:12px}
+    }
+    .svg-decor{position:absolute;right:0px;top:30px;opacity:0.12}
+    .tag{display:inline-block;background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--accent)}
+    .external-links{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:#071022;padding:8px 12px;border-radius:10px;font-weight:700;text-decoration:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" id="top">
+      <div class="brand" aria-label="Brand">
+        <div class="logo">Kornel</div>
+        <div>
+          <div style="font-weight:800">Muzyka jako Pasja</div>
+          <div style="font-size:12px;color:var(--muted)">Strona osobista</div>
+        </div>
+      </div>
+      <nav role="navigation" aria-label="Główne menu">
+        <a href="#home">Start</a>
+        <a href="#o-mnie">Dlaczego muzyka?</a>
+        <a href="#wykonawcy">Wykonawcy</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#portfolio">Portfolio</a>
+      </nav>
+      <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">☰</div>
+    </div>
+    <div id="mobileMenu" style="display:none;background:linear-gradient(180deg, rgba(2,6,23,0.95), rgba(2,6,23,0.95));padding:12px 24px" aria-hidden="true"></div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div>
+        <div class="tag">Pasja</div>
+        <h1>Muzyka — mój rytm</h1>
+        <p>Ta strona to przestrzeń poświęcona mojej pasji do muzyki. Znajdziesz tu moich ulubionych wykonawców, ich dyskografie oraz galerię zdjęć.</p>
+
+        <div style="margin-top:18px" class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <div style="font-weight:800">Moje platformy</div>
+              <div style="font-size:13px;color:var(--muted)">Szybkie linki do zewnętrznych źródeł</div>
+            </div>
+            <div class="external-links">
+              <a class="btn" href="https://open.spotify.com/?flow_ctx=5350ffda-7cf3-4b54-8dcd-c4075ca38087%3A1764929179#_=_" target="_blank" rel="noopener">Spotify</a>
+              <a class="btn" href="https://www.youtube.com/watch?v=szScXOEkkFw" target="_blank" rel="noopener">YouTube</a>
+              <a class="btn" href="https://music.apple.com" target="_blank" rel="noopener">Apple Music</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <aside>
+        <div class="card">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=60&auto=format&fit=crop" alt="muzyka ikona" style="width:84px;height:84px;border-radius:10px;object-fit:cover">
+            <div>
+              <div style="font-weight:800">Szybki przegląd</div>
+              <div style="font-size:13px;color:var(--muted)">3 wykonawców pokazanych poniżej — kliknij by przejść do sekcji dyskografii.</div>
+            </div>
+          </div>
+
+          <div class="playlist">
+            <a class="artist-item" href="#wykonawcy" style="text-decoration:none;color:inherit">
+              <img src="badvibesforever.jpg" alt="Wykonawca A">
+              <div>
+                <div class="meta">XXXTENTACION</div>
+                <div style="font-size:13px;color:var(--muted)">Rap / Emo Rap</div>
+              </div>
+            </a>
+            <a class="artist-item" href="#wykonawcy" style="text-decoration:none;color:inherit">
+              <img src="produkt47.jpg" alt="Wykonawca B">
+              <div>
+                <div class="meta">Oki</div>
+                <div style="font-size:13px;color:var(--muted)">Hip-hop / Trap</div>
+              </div>
+            </a>
+            <a class="artist-item" href="#wykonawcy" style="text-decoration:none;color:inherit">
+              <img src="youwillregretreloaded.jfif" alt="Wykonawca C">
+              <div>
+                <div class="meta">Ski Mask The Slump God</div>
+                <div style="font-size:13px;color:var(--muted)">Trap / Rap</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="o-mnie">
+      <h2>Dlaczego muzyka?</h2>
+      <div class="card">
+        <p style="margin:0;color:var(--muted)">Jestem miłośnikiem muzyki — Zwłaszcza nowoczesnych produkcji. Muzyka to dla mnie sposób na wyrażenie emocji, tło do pracy i przestrzeń na odkrycia. Na tej stronie zebrałem moje ulubione zespoły oraz dyskografie, aby mieć wszystkie inspiracje w jednym miejscu.</p>
+      </div>
+    </section>
+
+    <section id="wykonawcy">
+      <h2>Wykonawcy i Dyskografie</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="margin-top:0">XXXTENTACION</h3>
+          <p style="color:var(--muted)">Kontrowersyjny raper pochodzący z USA, niestety zmarł w 2018.</p>
+
+          <div class="discography" style="margin-top:12px">
+            <div class="album">
+              <img src="badvibesforever.jpg" alt="Album 1">
+              <div class="info">
+                <div style="font-weight:800">Bad Vibes Forever</div>
+                <div style="font-size:13px;color:var(--muted)">Single: "Triumph", "HEARTEATER"</div>
+              </div>
+            </div>
+            <div class="album">
+              <img src="znakzapytania" alt="Album 2">
+              <div class="info">
+                <div style="font-weight:800">?</div>
+                <div style="font-size:13px;color:var(--muted)">Single: "SAD!", "Hope"</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:12px"><a href="https://open.spotify.com/artist/15UsOTVnJzReFVN1VCnxy4" target="_blank" rel="noopener" class="btn">Odsłuchaj na Spotify</a></div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Ski Mask The Slump God</h3>
+          <p style="color:var(--muted)">Najlepszy przyjaciel XXX, stworzyli razem mnóstwo utworów.</p>
+          <div class="discography" style="margin-top:12px">
+            <div class="album">
+              <img src="youwillregretreloaded.jfif" alt="Album 3">
+              <div class="info">
+                <div style="font-weight:800">You Will Regret (Reloaded)</div>
+                <div style="font-size:13px;color:var(--muted)">Single: "BabyWipe", "Catch Me Outside"</div>
+              </div>
+            </div>
+            <div class="album">
+              <img src="stokeley.jpg" alt="Album 4">
+              <div class="info">
+                <div style="font-weight:800">Stokeley</div>
+                <div style="font-size:13px;color:var(--muted)">Single: "NukeTown", "Foot Fungus"</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:12px"><a href="https://open.spotify.com/artist/2rhFzFmezpnW82MNqEKVry" target="_blank" rel="noopener" class="btn">Odsłuchaj na Spotify</a></div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Oki</h3>
+          <p style="color:var(--muted)">Polski melodyczny rap twórca, słynie z numeru 47.</p>
+          <div class="discography" style="margin-top:12px">
+            <div class="album">
+              <img src="produkt47.jpg" alt="Album 5">
+              <div class="info">
+                <div style="font-weight:800">PRODUKT47</div>
+                <div style="font-size:13px;color:var(--muted)">Single: "Doja Cat", "Stado Hartów"</div>
+              </div>
+            </div>
+            <div class="album">
+              <img src="era47.jpg" alt="Album 6">
+              <div class="info">
+                <div style="font-weight:800">ERA47</div>
+                <div style="font-size:13px;color:var(--muted)">Single: "JEREMY SOCHAN", "ILE LAT?"</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:12px"><a href="https://open.spotify.com/artist/1oxn6cQ37twQ7yGnlE3ETd" target="_blank" rel="noopener" class="btn">Odsłuchaj na Spotify</a></div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="galeria">
+      <h2>Galeria — Moje ulubione albumy</h2>
+      <div class="card gallery" aria-label="Galeria zdjęć">
+        <img src="badvibesforever.jpg" alt="zdjęcie 1">
+        <img src="17.jpg" alt="zdjęcie 2">
+        <img src="goodbyeandgoodriddance.jpg" alt="zdjęcie 3">
+        <img src="youwillregretreloaded.jfif" alt="zdjęcie 4">
+        <img src="ta13oo.jpg" alt="zdjęcie 5">
+        <img src="znakzapytania" alt="zdjęcie 6">
+        <img src="era47.jpg" alt="zdjęcie 7">
+        <img src="produkt47.jpg" alt="zdjęcie 8">
+        <img src="oio.jpg" alt="zdjęcie 9">
+        <img src="legendsneverdie.jpg" alt="zdjęcie 10">
+      </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="card">
+        <h3 style="margin-top:0">Mini portfolio — O mnie</h3>
+        <p style="color:var(--muted)">Cześć! Nazywam się <strong>Kornel</strong> i muzyka to nie moje jedyne hobby, ale ważna część mojego życia. Oprócz muzyki lubię również grać w siatkówkę jak i w koszykówkę, kolekcjonować LEGO oraz spotykać się z przyjaciółmi.</p>
+        
+        
+        <p style="color:var(--muted)">W wolnym czasie:</p>
+        <ul style="color:var(--muted);line-height:1.6">
+        <li><strong>Odkrywam nowe albumy</strong> i analizuję ich brzmienie.</li>
+        <li><strong>Tworzę własne playlisty</strong> dopasowane do nastroju lub tematu.</li>
+        </ul>
+        </div>
+        </section>
+        
+        
+        <footer>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div style="font-weight:700">Muzyka jako Pasja</div>
+        <div style="color:var(--muted);font-size:13px">©Kornel2025</div>
+        </div>
+        </footer>
+        </main>
+        
+        
+        <svg class="svg-decor" width="380" height="260" viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="40" y="20" width="300" height="200" rx="36" fill="url(#g)" />
+        <defs>
+        <linearGradient id="g" x1="0" x2="1">
+        <stop offset="0" stop-color="#f59e0b"/>
+        <stop offset="1" stop-color="#ef4444"/>
+        </linearGradient>
+        </defs>
+        </svg>
+
+  <script>
+    (function(){
+      const mobile = document.getElementById('mobileMenu');
+      document.querySelector('.hamburger').addEventListener('click', ()=>{
+        if(!mobile) return;
+        if(mobile.style.display==='none' || mobile.style.display===''){
+          mobile.style.display='block';
+          mobile.innerHTML = '<a href="#home" style="display:block;padding:10px;color:var(--muted)">Start</a><a href="#o-mnie" style="display:block;padding:10px;color:var(--muted)">O mnie</a><a href="#wykonawcy" style="display:block;padding:10px;color:var(--muted)">Wykonawcy</a><a href="#galeria" style="display:block;padding:10px;color:var(--muted)">Galeria</a><a href="#kontakt" style="display:block;padding:10px;color:var(--muted)">Kontakt</a>';
+          mobile.setAttribute('aria-hidden','false');
+        } else {
+          mobile.style.display='none';
+          mobile.setAttribute('aria-hidden','true');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
